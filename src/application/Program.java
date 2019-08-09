@@ -25,16 +25,22 @@ public class Program {
 			System.out.println(obj);
 		}
 		
-		System.out.println("\n=== TESTE 03: Seller Find ALL ===");		
+		/*System.out.println("\n=== TESTE 03: Seller Find ALL ===");		
 		list = sellerDao.findAll();
 		for(Seller obj : list) {
 			System.out.println(obj);
-		}
+		}*/
 		
 		System.out.println("\n=== TESTE 04: Seller Insert ===");	
 		Seller newseller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.00, department);
 		sellerDao.insert(newseller);
 		System.out.println("Inserted! New id = " + newseller.getId());
+		
+		System.out.println("\n=== TESTE 05: Seller UPDATE ===");	
+		seller = sellerDao.findById(1);
+		seller.setName("Marta Waine");
+		sellerDao.update(seller);
+		System.out.println("UPDATED COMPLETE");
 	}
 
 }
